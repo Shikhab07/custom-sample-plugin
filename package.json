@@ -1,1 +1,19 @@
-
+{
+  "name": "cordova-plugin-sample",
+  "version": "1.0.0",
+  "description": "Cordova Sample Plugin",
+  "cordova": {
+    "id": "cordova-plugin-sample",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "sample",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Shikhab07",
+  "license": "Apache-2.0"
+}
