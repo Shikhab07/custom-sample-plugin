@@ -15,6 +15,13 @@
                 <param name="android-package" value="com.example.sampleplugin.SamplePlugin" />
             </feature>
         </config-file>
+        <edit-config file="AndroidManifest.xml"
+                 target="/manifest/application"
+                 mode="merge">
+        <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" tools:node="remove"/>
+        <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" tools:node="remove"/>
+       </edit-config>
+
         <source-file src="src/android/SamplePlugin.java" target-dir="src/com/example/sampleplugin" />
     </platform>
     <js-module src="www/sample.js" name="SamplePlugin">
