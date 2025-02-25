@@ -10,7 +10,7 @@
         <engine name="cordova" version=">=9.0.0" />
     </engines>
     <platform name="android">
-         <edit-config file="AndroidManifest.xml" target="/manifest/uses-permission[@android:name='android.permission.READ_MEDIA_IMAGES']">
+         <edit-config file="AndroidManifest.xml" target="/manifest/uses-permission[@android:name='android.permission.READ_MEDIA_IMAGES']" mode="overwrite">
         <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" tools:node="remove"/>
         </edit-config>
 
