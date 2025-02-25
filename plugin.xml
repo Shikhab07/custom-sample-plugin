@@ -10,9 +10,9 @@
         <engine name="cordova" version=">=9.0.0" />
     </engines>
     <platform name="android">
-    <edit-config file="AndroidManifest.xml" target="/manifest/uses-permission[@android:name='android.permission.READ_MEDIA_IMAGES']">
-        <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" tools:node="remove"/>
-    </edit-config>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" tools:node="remove" />
+        </config-file>
    
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="SamplePlugin">
