@@ -9,15 +9,19 @@
     <engines>
         <engine name="cordova" version=">=9.0.0" />
     </engines>
-    <platform name="android">
+    <platform name="android" xmlns:tools="http://schemas.android.com/tools">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="SamplePlugin">
                 <param name="android-package" value="com.example.sampleplugin.SamplePlugin" />
             </feature>
         </config-file>
         <source-file src="src/android/SamplePlugin.java" target-dir="src/com/example/sampleplugin" />
-    <edit-config file="AndroidManifest.xml" mode="remove" target="/manifest/uses-permission[@android:name='android.permission.READ_MEDIA_IMAGES']" />
-    <edit-config file="AndroidManifest.xml" mode="remove" target="/manifest/uses-permission[@android:name='android.permission.READ_MEDIA_VIDEO']" />
+        <edit-config file="AndroidManifest.xml" target="/manifest/uses-permission[@android:name='android.permission.READ_MEDIA_IMAGES']" mode="overwrite">
+           <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" tools:node="remove"/>
+        </edit-config>
+        <edit-config file="AndroidManifest.xml" target="/manifest/uses-permission[@android:name='android.permission.READ_MEDIA_VIDEO']" mode="overwrite">
+           <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" tools:node="remove"/>
+        </edit-config>
     </platform>
     <js-module src="www/sample.js" name="SamplePlugin">
         <clobbers target="samplePlugin" />
